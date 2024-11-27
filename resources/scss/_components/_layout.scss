@@ -533,3 +533,11 @@ html:not(.layout-footer-fixed) .content-wrapper {
     opacity: $modal-backdrop-opacity;
   }
 }
+.layout-menu {
+  width: 200px; /* Réduisez cette valeur selon vos besoins */
+  transition: width 0.3s ease; /* Ajoute une animation fluide */
+}
+.layout-container {
+  margin-left: 200px; /* Adaptez la marge au nouveau width */
+  transition: margin-left 0.3s ease;
+}
