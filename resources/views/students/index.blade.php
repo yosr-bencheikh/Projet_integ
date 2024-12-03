@@ -3,6 +3,7 @@
 @section('title', 'Gestion des Étudiants')
 
 @section('content')
+@include('components.side-bar')
 <div class="col-md-offset-1 col-md-10" style="left: 85px">
     <div class="panel">
         <div class="panel-heading">

@@ -9,8 +9,8 @@
     data-template="vertical-menu-template-free">
 
 <head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
     <meta charset="utf-8" />
     <meta
         name="viewport"
@@ -152,7 +152,7 @@
                         <span class="menu-header-text">Pages</span>
                     </li>
                     <li class="menu-item">
-                        <a href="{{ route('students.index') }}" class="menu-link">
+                        <a href="{{ route('classes.index') }}" class="menu-link">
                             <i class="menu-icon tf-icons bx bx-dock-top"></i>
                             <div data-i18n="Account Settings">Gestion des étudiants</div>
                         </a>
@@ -183,7 +183,7 @@
                                 </a>
                             </li>
                             <li class="menu-item">
-                                <a href="{{ route('stage.pfe') }}" class="menu-link">
+                                <a href="{{ route('stageDePFEinterface') }}" class="menu-link">
                                     <div data-i18n="Under Maintenance">Stage de PFE</div>
                                 </a>
                             </li>

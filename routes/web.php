@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SoutenanceController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Mail; // Add this line
@@ -62,7 +63,6 @@ Route::get('/stage-initiation', [stageInitiation::class, 'index'])->name('stage.
 
 
 Route::get('/stage-perfectionnement', [stagePerfectionnement::class, 'index'])->name('stage.perfectionnement');
-Route::get('/stage-pfe', [stagePFE::class, 'index'])->name('stage.pfe');
 
 //class
 Route::get('/classes', [ClassController::class, 'index'])->name('classes.index');
@@ -70,3 +70,12 @@ Route::post('/classes', [ClassController::class, 'store'])->name('classes.store'
 
 // routes/web.php
 Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+
+Route::delete('/soutenances/{id}', [SoutenanceController::class, 'destroy']);
+
+
+
+Route::get('/soutenances/pfe', [SoutenanceController::class, 'showPFE'])->name('stageDePFEinterface');
+Route::get('/soutenances/initiation', [SoutenanceController::class, 'showInitiation'])->name('stage.initiation');
+Route::get('/soutenances/perfectionnement', [SoutenanceController::class, 'showPerfectionnement'])->name('stage.perfectionnement');
+Route::post('/soutenances', [SoutenanceController::class, 'store'])->name('soutenances.store');

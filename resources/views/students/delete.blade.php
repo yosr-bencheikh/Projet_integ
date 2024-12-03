@@ -20,11 +20,7 @@
                     @method('DELETE')
                     <!-- Hidden field to pass the current class filter -->
                     <input type="hidden" name="classe" value="{{ request('classe') }}">
-
-                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteClassModal-{{ $class->id }}">
-                        Supprimer
-                    </button>
-
+                    <button type="submit" class="btn btn-danger">Supprimer</button>
                 </form>
             </div>
         </div>

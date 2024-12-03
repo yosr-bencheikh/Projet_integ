@@ -327,7 +327,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="addStudentModalLabel">
-              Ajouter un Enseignant
+              Ajouter un Étudiant
             </h5>
             <button
               type="button"

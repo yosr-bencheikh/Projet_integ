@@ -59,7 +59,8 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="soutenanceForm">
+          <form id="soutenanceForm" action="{{ route('soutenances.store') }}" method="POST">
+            @csrf
             <div class="mb-3">
               <label for="etudiant" class="form-label">Étudiant</label>
               <select class="form-select" id="etudiant">

@@ -13,18 +13,16 @@ class CreateSoutenancesTable extends Migration
             $table->string('etudiant');
             $table->string('jury1');
             $table->string('jury2');
+            $table->string('encadrant')->nullable();
             $table->string('societe')->nullable();
+            $table->string('type')->nullable(); // Move 'type' to the desired position
             $table->date('date_debut')->nullable();
             $table->date('date_fin')->nullable();
             $table->string('classe', 100)->nullable();
+            $table->string('salle')->nullable();
             $table->time('heure')->nullable();
             $table->date('date_soutenance')->nullable();
             $table->timestamps();
         });
-    }
-
-    public function down()
-    {
-        Schema::dropIfExists('soutenances');
     }
 }

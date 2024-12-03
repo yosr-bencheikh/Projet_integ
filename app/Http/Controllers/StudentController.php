@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use App\Models\Student;
@@ -40,7 +39,7 @@ class StudentController extends Controller
             'prenom' => 'required|string|max:255',
             'classe_id' => 'required|exists:classes,id', // Valider l'ID de la classe
         ]);
-
+    
         // Créer le nouvel étudiant
         $student = new Student();
         $student->cin = $request->cin;
@@ -48,13 +47,13 @@ class StudentController extends Controller
         $student->prenom = $request->prenom;
         $student->classe_id = $request->classe_id; // Utiliser l'ID de la classe
         $student->save();
-
+    
         // Rediriger vers la liste des étudiants avec le filtre actuel
         return redirect()->route('students.index', ['classe' => $student->classe->classe])
             ->with('success', 'Étudiant ajouté avec succès');
     }
-
-
+    
+    
     public function update(Request $request, $id)
     {
         $request->validate([
@@ -63,7 +62,7 @@ class StudentController extends Controller
             'prenom' => 'required|string|max:255',
             'classe_id' => 'required|exists:classes,id',
         ]);
-
+    
         // Recherche et mise à jour de l'étudiant
         $student = Student::findOrFail($id);
         $student->cin = $request->cin;
@@ -71,24 +70,24 @@ class StudentController extends Controller
         $student->prenom = $request->prenom;
         $student->classe_id = $request->classe_id;
         $student->save();
-
+    
         return redirect()->back()->with('success', 'Étudiant modifié avec succès!');
     }
-
+    
     public function destroy(Request $request, $id)
     {
         // Trouver et supprimer l'étudiant
         $student = Student::findOrFail($id);
         $student->delete();
-
+    
         // Récupérer la classe pour redirection
         $classe = $request->input('classe');
-
+    
         // Redirection vers la liste filtrée
         return redirect()->route('students.index', ['classe' => $classe])
             ->with('success', 'Étudiant supprimé avec succès!');
     }
-
+    
 
     public function importExcelData(Request $request)
     {
@@ -108,10 +107,11 @@ class StudentController extends Controller
         return view('students.add', compact('classes'));
     }
     public function edit($id)
-    {
-        $student = Student::findOrFail($id);
+{
+    $student = Student::findOrFail($id);
 
-        // Retourne les données sous format JSON
-        return response()->json($student);
-    }
+    // Retourne les données sous format JSON
+    return response()->json($student);
+}
+
 }
